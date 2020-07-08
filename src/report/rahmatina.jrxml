@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d6c70ec3-b951-46eb-814e-35293d7cd084">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="34"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tb_karyawan.`Id_Karyawan` AS tb_karyawan_Id_Karyawan,
+     tb_karyawan.`Nama_Karyawan` AS tb_karyawan_Nama_Karyawan,
+     tb_karyawan.`Jenis_Kelamin` AS tb_karyawan_Jenis_Kelamin,
+     tb_karyawan.`Alamat` AS tb_karyawan_Alamat,
+     tb_karyawan.`Status` AS tb_karyawan_Status,
+     tb_karyawan.`No_Telepon` AS tb_karyawan_No_Telepon
+FROM
+     `tb_karyawan` tb_karyawan]]>
+	</queryString>
+	<field name="tb_karyawan_Id_Karyawan" class="java.lang.String"/>
+	<field name="tb_karyawan_Nama_Karyawan" class="java.lang.String"/>
+	<field name="tb_karyawan_Jenis_Kelamin" class="java.lang.String"/>
+	<field name="tb_karyawan_Alamat" class="java.lang.String"/>
+	<field name="tb_karyawan_Status" class="java.lang.String"/>
+	<field name="tb_karyawan_No_Telepon" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="99" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="59" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="133" height="20" uuid="f6c4224b-d8a9-4955-9e7e-d168652202f0"/>
+				<text><![CDATA[OID KARYAEWAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="0" width="133" height="20" uuid="d3736963-2a3b-4fe0-8a6b-5f45bc4a56b2"/>
+				<text><![CDATA[tb_karyawan_Nama_Karyawan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="0" width="133" height="20" uuid="c7616735-9532-4edc-ac08-9d7ee89b1ebf"/>
+				<text><![CDATA[tb_karyawan_Jenis_Kelamin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="399" y="0" width="133" height="20" uuid="0dac7106-2210-4fd6-a663-ba2719e87a72"/>
+				<text><![CDATA[tb_karyawan_Alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="532" y="0" width="133" height="20" uuid="5dbbc3a1-e903-4e3d-9775-d1e0c43f1b47"/>
+				<text><![CDATA[tb_karyawan_Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="665" y="0" width="133" height="20" uuid="5759f93a-8683-4e32-a886-175ca444825a"/>
+				<text><![CDATA[tb_karyawan_No_Telepon]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="74" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="133" height="20" uuid="4dec2c13-838c-4a2f-8cbb-c74056295cce"/>
+				<textFieldExpression><![CDATA[$F{tb_karyawan_Id_Karyawan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="0" width="133" height="20" uuid="205b2d30-8ccd-4e5a-80aa-dce0175e5f89"/>
+				<textFieldExpression><![CDATA[$F{tb_karyawan_Nama_Karyawan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="0" width="133" height="20" uuid="824ffd9d-5e55-4bcc-b97a-127bb6194cc6"/>
+				<textFieldExpression><![CDATA[$F{tb_karyawan_Jenis_Kelamin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="399" y="0" width="133" height="20" uuid="a62a86a8-492d-4199-a748-34b3a6b5749b"/>
+				<textFieldExpression><![CDATA[$F{tb_karyawan_Alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="532" y="0" width="133" height="20" uuid="cb5fb5c3-6284-4ed1-9236-921aefbf6642"/>
+				<textFieldExpression><![CDATA[$F{tb_karyawan_Status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="665" y="0" width="133" height="20" uuid="e8494014-3d5c-4521-84b9-7c30921dac7f"/>
+				<textFieldExpression><![CDATA[$F{tb_karyawan_No_Telepon}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="82" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="5" y="0" width="797" height="18" uuid="3e5f5e1a-839e-44eb-b0a0-656d136eb7df"/>
+			</frame>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

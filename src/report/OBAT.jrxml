@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="286ce4b5-490a-48e9-85ff-03bee1ce54ae">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="6"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tb_obat.`kd_obat` AS tb_obat_kd_obat,
+     tb_obat.`nama_obat` AS tb_obat_nama_obat,
+     tb_obat.`jenis` AS tb_obat_jenis,
+     tb_obat.`dosis` AS tb_obat_dosis,
+     tb_obat.`harga` AS tb_obat_harga
+FROM
+     `tb_obat` tb_obat]]>
+	</queryString>
+	<field name="tb_obat_kd_obat" class="java.lang.String"/>
+	<field name="tb_obat_nama_obat" class="java.lang.String"/>
+	<field name="tb_obat_jenis" class="java.lang.String"/>
+	<field name="tb_obat_dosis" class="java.lang.String"/>
+	<field name="tb_obat_harga" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="fc210111-b3fa-4014-beb6-ce6b0faba10f" x="291" y="10" width="217" height="42"/>
+				<textElement>
+					<font fontName="Times New Roman" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APOTEK RF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fc210111-b3fa-4014-beb6-ce6b0faba10f" x="285" y="89" width="231" height="42"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATA OBAT]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="2ae61202-ead8-4a90-ab97-e28a99cdb7aa" x="29" y="77" width="746" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.5"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="2ae61202-ead8-4a90-ab97-e28a99cdb7aa" x="29" y="131" width="746" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.5"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="180b771e-ef0f-48aa-ba71-82c98453a11d" x="29" y="7" width="132" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KODE OBAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="06bceaf1-6b8d-49f6-a58e-58b1591acc6b" x="161" y="7" width="160" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA OBAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f5d9a3ff-01a2-41a2-ae60-2b3f88c4f3d2" x="321" y="7" width="140" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JENIS OBAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="04369357-11dd-4f11-a994-7aa9dd65df7d" x="461" y="7" width="160" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DOSIS]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="2ae61202-ead8-4a90-ab97-e28a99cdb7aa" x="29" y="32" width="746" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="9a9d6847-e29d-4ed9-8b2c-818171160859" x="621" y="7" width="154" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HARGA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement uuid="74bc098c-d65e-4248-af21-999ba60efee3" x="29" y="3" width="131" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_obat_kd_obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="485cd936-eee0-4dcc-91b3-d32ca5991be7" x="160" y="3" width="160" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_obat_nama_obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6c9875f6-f8ef-41cf-a323-621afb543a08" x="320" y="3" width="160" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_obat_jenis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ea7c61cd-762a-437a-a5f6-60496771e23e" x="480" y="3" width="141" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_obat_dosis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="10412f0c-67da-40e6-ad9b-03129ea0870c" x="621" y="3" width="154" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_obat_harga}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="2ae61202-ead8-4a90-ab97-e28a99cdb7aa" x="29" y="30" width="746" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.75"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="57" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

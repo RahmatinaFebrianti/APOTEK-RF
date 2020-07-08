@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="04041215-2ba2-458d-8985-2f9385ea8f1c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="ID_PELANGGAN" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     tb_transaksi.`id_transaksi` AS tb_transaksi_id_transaksi,
+     tb_transaksi.`tgl_transaksi` AS tb_transaksi_tgl_transaksi,
+     tb_transaksi.`id_pelanggan` AS tb_transaksi_id_pelanggan,
+     tb_transaksi.`nama_pelanggan` AS tb_transaksi_nama_pelanggan,
+     tb_transaksi.`id_karyawan` AS tb_transaksi_id_karyawan,
+     tb_transaksi.`nama_karayawan` AS tb_transaksi_nama_karayawan,
+     tb_transaksi.`kode_obat` AS tb_transaksi_kode_obat,
+     tb_transaksi.`nama_obat` AS tb_transaksi_nama_obat,
+     tb_transaksi.`harga` AS tb_transaksi_harga,
+     tb_transaksi.`jml_beli` AS tb_transaksi_jml_beli,
+     tb_transaksi.`total` AS tb_transaksi_total,
+     tb_transaksi.`kembalian` AS tb_transaksi_kembalian,
+     tb_transaksi.`bayar` AS tb_transaksi_bayar
+FROM
+     `tb_transaksi` tb_transaksi
+WHERE
+     tb_transaksi.id_pelanggan = $P{ID_PELANGGAN}]]>
+	</queryString>
+	<field name="tb_transaksi_id_transaksi" class="java.lang.String"/>
+	<field name="tb_transaksi_tgl_transaksi" class="java.lang.String"/>
+	<field name="tb_transaksi_id_pelanggan" class="java.lang.String"/>
+	<field name="tb_transaksi_nama_pelanggan" class="java.lang.String"/>
+	<field name="tb_transaksi_id_karyawan" class="java.lang.String"/>
+	<field name="tb_transaksi_nama_karayawan" class="java.lang.String"/>
+	<field name="tb_transaksi_kode_obat" class="java.lang.String"/>
+	<field name="tb_transaksi_nama_obat" class="java.lang.String"/>
+	<field name="tb_transaksi_harga" class="java.lang.Integer"/>
+	<field name="tb_transaksi_jml_beli" class="java.lang.String"/>
+	<field name="tb_transaksi_total" class="java.lang.Integer"/>
+	<field name="tb_transaksi_kembalian" class="java.lang.Integer"/>
+	<field name="tb_transaksi_bayar" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<line>
+				<reportElement uuid="2ae61202-ead8-4a90-ab97-e28a99cdb7aa" x="27" y="127" width="746" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="fc210111-b3fa-4014-beb6-ce6b0faba10f" x="283" y="85" width="231" height="42"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TRANSAKSI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fc210111-b3fa-4014-beb6-ce6b0faba10f" x="289" y="10" width="217" height="42"/>
+				<textElement>
+					<font fontName="Times New Roman" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APOTEK RF]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="2ae61202-ead8-4a90-ab97-e28a99cdb7aa" x="27" y="77" width="746" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.5"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="112" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="358a6dad-5539-4c64-b25c-d9954ad4485c" x="50" y="12" width="112" height="22"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID TRANSAKSI]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="cb6afc78-26b9-4ff9-aeca-de71f84839c6" x="178" y="14" width="166" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_id_transaksi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="358a6dad-5539-4c64-b25c-d9954ad4485c" x="50" y="41" width="125" height="22"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TGL TRANSAKSI]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement uuid="d1fd4de0-fa09-41a3-a2f6-6c97791950ef" x="178" y="41" width="166" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_tgl_transaksi}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="2ae61202-ead8-4a90-ab97-e28a99cdb7aa" x="27" y="109" width="746" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="358a6dad-5539-4c64-b25c-d9954ad4485c" x="466" y="12" width="142" height="22"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA PELANGGAN]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="c41db79b-8b0a-470d-b778-e49320e281ab" x="618" y="12" width="155" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_nama_pelanggan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="d8466bc1-471b-4309-b9b1-5cb791de4c82" x="421" y="82" width="179" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HARGA OBAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="169027ce-c37c-438d-9d7c-20afde748446" x="608" y="82" width="165" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JUMLAH BELI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f2969702-d68a-45a3-b61c-a681c2cbd62c" x="70" y="82" width="157" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KODE OBAT]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="2ae61202-ead8-4a90-ab97-e28a99cdb7aa" x="27" y="72" width="746" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="358a6dad-5539-4c64-b25c-d9954ad4485c" x="466" y="41" width="142" height="22"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA KARYAWAN]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="33d6773a-1e55-4ce6-8050-1795e1ff7a5f" x="618" y="41" width="155" height="20"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_nama_karayawan}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="e2c3a956-744e-42fe-9ff6-aa27ca5b82ff" x="245" y="82" width="145" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA OBAT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="160" splitType="Stretch">
+			<textField>
+				<reportElement uuid="abfd6308-2969-4157-b27f-29e47670ba7b" x="70" y="5" width="157" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_kode_obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="337da93b-b909-431f-ae2f-f4186e5575b2" x="245" y="5" width="145" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_nama_obat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="12c2745a-9e44-4be9-b91c-abc7e9b0ee40" x="421" y="5" width="179" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="febd2680-4980-4d5b-b85b-895d027ed90b" x="608" y="5" width="165" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_jml_beli}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="2ae61202-ead8-4a90-ab97-e28a99cdb7aa" x="27" y="32" width="746" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.75"/>
+				</graphicElement>
+			</line>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement uuid="ce6e0d82-ee3a-4339-b5fd-80337c0285ec" x="200" y="117" width="135" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_kembalian}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement uuid="101afa3e-389a-4f43-9b9a-e0891830050b" x="200" y="52" width="100" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="358a6dad-5539-4c64-b25c-d9954ad4485c" x="175" y="82" width="20" height="22"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rp]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="358a6dad-5539-4c64-b25c-d9954ad4485c" x="50" y="84" width="112" height="22"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BAYAR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="358a6dad-5539-4c64-b25c-d9954ad4485c" x="50" y="50" width="112" height="22"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="358a6dad-5539-4c64-b25c-d9954ad4485c" x="175" y="115" width="20" height="22"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rp]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="358a6dad-5539-4c64-b25c-d9954ad4485c" x="50" y="117" width="112" height="22"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[KEMBALIAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="358a6dad-5539-4c64-b25c-d9954ad4485c" x="175" y="52" width="20" height="22"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Rp]]></text>
+			</staticText>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement uuid="f68cbd4f-55ca-4871-8c65-4eed9435e067" x="200" y="84" width="100" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_transaksi_bayar}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

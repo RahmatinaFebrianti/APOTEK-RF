@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6376adb7-091d-4e9d-b1e9-f53759c9b2cf">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="19"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tb_karyawan.`Id_Karyawan` AS tb_karyawan_Id_Karyawan,
+     tb_karyawan.`Nama_Karyawan` AS tb_karyawan_Nama_Karyawan,
+     tb_karyawan.`Jenis_Kelamin` AS tb_karyawan_Jenis_Kelamin,
+     tb_karyawan.`Alamat` AS tb_karyawan_Alamat,
+     tb_karyawan.`Status` AS tb_karyawan_Status,
+     tb_karyawan.`No_Telepon` AS tb_karyawan_No_Telepon
+FROM
+     `tb_karyawan` tb_karyawan]]>
+	</queryString>
+	<field name="tb_karyawan_Id_Karyawan" class="java.lang.String"/>
+	<field name="tb_karyawan_Nama_Karyawan" class="java.lang.String"/>
+	<field name="tb_karyawan_Jenis_Kelamin" class="java.lang.String"/>
+	<field name="tb_karyawan_Alamat" class="java.lang.String"/>
+	<field name="tb_karyawan_Status" class="java.lang.String"/>
+	<field name="tb_karyawan_No_Telepon" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="151" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="fc210111-b3fa-4014-beb6-ce6b0faba10f" x="290" y="10" width="217" height="42"/>
+				<textElement>
+					<font fontName="Times New Roman" size="36" isBold="true"/>
+				</textElement>
+				<text><![CDATA[APOTEK RF]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="2ae61202-ead8-4a90-ab97-e28a99cdb7aa" x="28" y="77" width="746" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.5"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="fc210111-b3fa-4014-beb6-ce6b0faba10f" x="284" y="96" width="231" height="42"/>
+				<textElement>
+					<font fontName="Times New Roman" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATA KARYAWAN]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="2ae61202-ead8-4a90-ab97-e28a99cdb7aa" x="28" y="147" width="746" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.5"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="2948ba43-e970-44e4-9a57-a98e29005148" x="28" y="13" width="104" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID KARYAWAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f273a0e1-0694-4f33-ad6e-a936c7c22ba8" x="147" y="13" width="118" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAMA KARYAWAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="53a4ccea-258a-41d9-b073-67d143092245" x="289" y="13" width="105" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JENIS KELAMIN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d91f2da2-b0e9-44cf-b905-427daf7c3d9f" x="439" y="13" width="92" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALAMAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="24207a4a-093a-4885-bb0c-f3fbb643c184" x="562" y="13" width="82" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[STATUS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7750aeec-e8c4-4c3d-8145-20973bcb7480" x="664" y="13" width="105" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NO TELPON]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="2ae61202-ead8-4a90-ab97-e28a99cdb7aa" x="28" y="42" width="746" height="1"/>
+				<graphicElement>
+					<pen lineWidth="2.5"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<textField>
+				<reportElement uuid="21aee070-dc92-48d0-bed0-e64ff7a13e37" x="43" y="2" width="90" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_karyawan_Id_Karyawan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fd0f7c87-a04c-49cc-862c-c07688cccf03" x="148" y="2" width="118" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_karyawan_Nama_Karyawan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6b4d0d2e-212c-4f23-a373-b09a063ead8e" x="290" y="2" width="105" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_karyawan_Jenis_Kelamin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="51e26a5c-0ddd-41dc-9f2d-005c5a787dd1" x="440" y="2" width="92" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_karyawan_Alamat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cce52e57-d3cd-422a-b5a9-5a057c42ed62" x="563" y="2" width="82" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_karyawan_Status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="770c3392-fbd7-49ed-9bc4-62851d59bf34" x="665" y="2" width="105" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tb_karyawan_No_Telepon}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="2ae61202-ead8-4a90-ab97-e28a99cdb7aa" x="28" y="28" width="746" height="1"/>
+				<graphicElement>
+					<pen lineWidth="1.75"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="41" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
